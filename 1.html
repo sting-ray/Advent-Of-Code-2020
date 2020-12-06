@@ -1,0 +1,55 @@
+<html>
+<body>
+Enter in the challenge input:<br>
+<textarea name="input" id="input" rows = "10" cols="50"></textarea><br>
+<button onclick="challenge1()">Challenge 1</button><br>
+<div id="challenge1"></div><br>
+<button onclick="challenge2()">Challenge 2</button><br>
+<div id="challenge2"></div><br>
+
+<script>
+
+
+    function challenge1() {
+        var input = document.getElementById("input").value.split("\n");
+        for (var loop1 = 0; loop1 < input.length; loop1++) {
+            for (var loop2 = 0; loop2 < input.length; loop2++) {
+                if (loop1 !== loop2) {
+                    console.log("Processing: " + input[loop1] + " " + input[loop2]);
+                    var sum = parseInt(input[loop1]) + parseInt(input[loop2]);
+                    console.log("Result: " + sum);
+                    if (sum == 2020) {
+                        var result = input[loop1] * input[loop2];
+                    }
+                }
+            }
+        }
+
+
+        document.getElementById("challenge1").innerHTML = result;
+    }
+
+    //=============================================================================================
+
+    function challenge2() {
+        var input = document.getElementById("input").value.split("\n");
+        console.log(input);
+        for (var loop1 = 0; loop1 < input.length; loop1++) {
+            for (var loop2 = 0; loop2 < input.length; loop2++) {
+                for (var loop3 = 0; loop3 < input.length; loop3++) {
+                    if (loop1 !== loop2 && loop1 !== loop3 && loop2 !== loop3) {
+                        var sum = parseInt(input[loop1]) + parseInt(input[loop2]) + parseInt(input[loop3]);
+                        if (sum == 2020) {
+                            var result = parseInt(input[loop1]) * parseInt(input[loop2]) * parseInt(input[loop3]);
+                            console.log("result inputs = " + parseInt(input[loop1]) + "*" + parseInt(input[loop2]) + "*" + parseInt(input[loop3]))
+                            console.log("result = " + result);
+                        }
+                    }
+                }
+            }
+        }
+
+        document.getElementById("challenge2").innerHTML = result;
+    }
+
+</script>
