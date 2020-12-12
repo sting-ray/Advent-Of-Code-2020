@@ -1,0 +1,60 @@
+<html>
+<body>
+Enter in the challenge input:<br>
+<textarea name="input" id="input" rows = "10" cols="50"></textarea><br>
+<button onclick="challenge1()">Challenge 1</button><br>
+<div id="challenge1"></div><br>
+<button onclick="challenge2()">Challenge 2</button><br>
+<div id="challenge2"></div><br>
+
+<script>
+
+    function challenge1() {
+        var input = document.getElementById("input").value.split("\n");
+        var result = 0;
+            for (var loop=0; loop < input.length; loop++) {
+                var value = input[loop].split(" ");
+                var count = 0;
+                for (var char=0; char < value[2].length; char++) {
+                    if (value[1][0] == value[2][char]) {
+                        count++;
+                    }
+                }
+                console.log(count);
+                var target = value[0].split("-");
+                if (count >= target[0] && count <= target[1]) {
+                    result++;
+                }
+            }
+        document.getElementById("challenge1").innerHTML = result;
+    }
+
+    //=============================================================================================
+
+    function challenge2() {
+        var input = document.getElementById("input").value.split("\n");
+        var result = 0;
+        var check = 0;
+        for (var loop=0; loop < input.length; loop++) {
+            var value = input[loop].split(" ");
+            var first = false;
+            var second = false;
+            var target = value[0].split("-");
+            check = parseInt(target[0]) - 1;
+            if (value[2][check] == value[1][0]) {
+                first = true;
+            }
+            check = parseInt(target[1]) - 1;
+            if (value[2][check] == value[1][0]) {
+                second = true;
+            }
+            if (first != second) {
+                result++;
+            }
+
+        }
+
+        document.getElementById("challenge2").innerHTML = result;
+    }
+
+</script>

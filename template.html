@@ -1,0 +1,27 @@
+<html>
+<body>
+Enter in the challenge input:<br>
+<textarea name="input" id="input" rows = "10" cols="50"></textarea><br>
+<button onclick="challenge1()">Challenge 1</button><br>
+<div id="challenge1"></div><br>
+<button onclick="challenge2()">Challenge 2</button><br>
+<div id="challenge2"></div><br>
+
+<script>
+
+
+    function challenge1() {
+        var input = document.getElementById("input").value.split("\n");
+
+        document.getElementById("challenge1").innerHTML = result;
+    }
+
+    //=============================================================================================
+
+    function challenge2() {
+        var input = document.getElementById("input").value.split("\n");
+
+        document.getElementById("challenge2").innerHTML = result;
+    }
+
+</script>
